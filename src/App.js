@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
-function Food(prop) {
-  console.log(prop)
-  return <h1 key={prop.fav}>I Like {prop.fav}</h1>
+function Food({name}) {
+  return <h1>I Like {name}</h1>
 }
 
 const foodILike = [
@@ -20,12 +20,13 @@ const foodILike = [
   }
 ]
 
+Food.propTypes = {
+  name: PropTypes.string
+};
+
 function renderFood(dish) {
-  console.log(dish)
-  return <Food key={dish.id} fav={dish.name} />
+  return <Food key={dish.id} name={dish.name} />
 }
-
-
 
 function App() {
   return (
